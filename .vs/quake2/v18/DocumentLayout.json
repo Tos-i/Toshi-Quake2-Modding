@@ -1,14 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Quake Games\\Quake 2 Code\\Toshi-Quake2-Modding\\",
+  "WorkspaceRootPath": "E:\\Quake Games\\Quake 2 Code\\Toshi-Quake2-Modding\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{99BC3F01-A7EE-4881-939F-8A5EB75E1973}|game\\game.vcxproj|D:\\Quake Games\\Quake 2 Code\\Toshi-Quake2-Modding\\game\\p_weapon.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{99BC3F01-A7EE-4881-939F-8A5EB75E1973}|game\\game.vcxproj|solutionrelative:game\\p_weapon.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{99BC3F01-A7EE-4881-939F-8A5EB75E1973}|game\\game.vcxproj|E:\\Quake Games\\Quake 2 Code\\Toshi-Quake2-Modding\\game\\g_weapon.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{99BC3F01-A7EE-4881-939F-8A5EB75E1973}|game\\game.vcxproj|solutionrelative:game\\g_weapon.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{99BC3F01-A7EE-4881-939F-8A5EB75E1973}|game\\game.vcxproj|D:\\Quake Games\\Quake 2 Code\\Toshi-Quake2-Modding\\game\\g_weapon.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{99BC3F01-A7EE-4881-939F-8A5EB75E1973}|game\\game.vcxproj|solutionrelative:game\\g_weapon.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{99BC3F01-A7EE-4881-939F-8A5EB75E1973}|game\\game.vcxproj|E:\\Quake Games\\Quake 2 Code\\Toshi-Quake2-Modding\\game\\p_weapon.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{99BC3F01-A7EE-4881-939F-8A5EB75E1973}|game\\game.vcxproj|solutionrelative:game\\p_weapon.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,30 +18,30 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "p_weapon.c",
-              "DocumentMoniker": "D:\\Quake Games\\Quake 2 Code\\Toshi-Quake2-Modding\\game\\p_weapon.c",
+              "DocumentMoniker": "E:\\Quake Games\\Quake 2 Code\\Toshi-Quake2-Modding\\game\\p_weapon.c",
               "RelativeDocumentMoniker": "game\\p_weapon.c",
-              "ToolTip": "D:\\Quake Games\\Quake 2 Code\\Toshi-Quake2-Modding\\game\\p_weapon.c",
+              "ToolTip": "E:\\Quake Games\\Quake 2 Code\\Toshi-Quake2-Modding\\game\\p_weapon.c",
               "RelativeToolTip": "game\\p_weapon.c",
-              "ViewState": "AgIAAMICAAAAAAAAAAAAAN4CAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAMsCAAAAAAAAAAAAANcCAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2026-04-13T00:50:38.545Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "g_weapon.c",
-              "DocumentMoniker": "D:\\Quake Games\\Quake 2 Code\\Toshi-Quake2-Modding\\game\\g_weapon.c",
+              "DocumentMoniker": "E:\\Quake Games\\Quake 2 Code\\Toshi-Quake2-Modding\\game\\g_weapon.c",
               "RelativeDocumentMoniker": "game\\g_weapon.c",
-              "ToolTip": "D:\\Quake Games\\Quake 2 Code\\Toshi-Quake2-Modding\\game\\g_weapon.c",
+              "ToolTip": "E:\\Quake Games\\Quake 2 Code\\Toshi-Quake2-Modding\\game\\g_weapon.c",
               "RelativeToolTip": "game\\g_weapon.c",
-              "ViewState": "AgIAAMABAAAAAAAAAAAmwNYBAABEAAAAAAAAAA==",
+              "ViewState": "AgIAAMABAAAAAAAAAAAAAMYBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2026-04-13T00:16:20.549Z",
               "EditorCaption": ""

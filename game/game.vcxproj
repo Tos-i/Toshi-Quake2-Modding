@@ -77,7 +77,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Alpha|Win32'">
-    <OutDir>..\..\..\Quake II\WeaponMod</OutDir>
+    <OutDir>..\..\..\Quake II\FinalProject</OutDir>
     <IntDir>.\DebugAxp\</IntDir>
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
@@ -85,20 +85,20 @@
     <IntDir>.\release\</IntDir>
     <LinkIncremental>false</LinkIncremental>
     <TargetName>gamex86</TargetName>
-    <OutDir>..\..\..\Quake II\WeaponMod</OutDir>
+    <OutDir>..\..\..\Quake II\FinalProject</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Alpha|Win32'">
-    <OutDir>..\..\..\Quake II\WeaponMod</OutDir>
+    <OutDir>..\..\..\Quake II\FinalProject</OutDir>
     <IntDir>.\ReleaseAXP\</IntDir>
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>..\..\..\Quake II\WeaponMod</OutDir>
+    <OutDir>..\..\..\Quake II\FinalProject</OutDir>
     <IntDir>.\debug\</IntDir>
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
-    <OutDir>..\..\..\Quake II\WeaponMod</OutDir>
+    <OutDir>..\..\..\Quake II\FinalProject</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug Alpha|Win32'">
     <ClCompile>

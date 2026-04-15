@@ -1,1 +1,2 @@
 D:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\release\gamex86.dll
+E:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\release\gamex86.dll
