@@ -1,29 +1,14 @@
+This mod is an adaptation of the game "Warhammer 40,000: Space Marine 2" into Quake 2.  In this mod, there's:
 
-This is the complete source code for Quake 2, version 3.19, buildable with
-visual C++ 6.0.  The linux version should be buildable, but we haven't
-tested it for the release.
+- a class system that allows swapping between 5 different classes via commands
+  - assault, dealing death from above
+  - vanguard, the on-foot scout master
+  - heavy, the big guns enthusiast
+  - bulwark, the frontline defender
+  - sniper, the fire support from the shadows
+- minor upgrades that can be gained for each class
+- updated weapons to reflect those that appear in the original game
+- 5 new defensive maneuvers to avoid damage in various ways
+- a third-person camera view!
 
-The code is all licensed under the terms of the GPL (gnu public license).  
-You should read the entire license, but the gist of it is that you can do 
-anything you want with the code, including sell your new version.  The catch 
-is that if you distribute new binary versions, you are required to make the 
-entire source code available for free to everyone.
-
-The primary intent of this release is for entertainment and educational 
-purposes, but the GPL does allow commercial exploitation if you obey the 
-full license.  If you want to do something commercial and you just can't bear 
-to have your source changes released, we could still negotiate a separate 
-license agreement (for $$$), but I would encourage you to just live with the 
-GPL.
-
-All of the Q2 data files remain copyrighted and licensed under the 
-original terms, so you cannot redistribute data from the original game, but if 
-you do a true total conversion, you can create a standalone game based on 
-this code.
-
-Thanks to Robert Duffy for doing the grunt work of building this release.
-
-John Carmack
-Id Software
-
-
+In order to properly install this mod, simply move the "FinalProject" folder into your Quake 2 game folder.
