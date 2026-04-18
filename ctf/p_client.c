@@ -1013,6 +1013,10 @@ void CopyToBodyQue (edict_t *ent)
 
 void respawn (edict_t *self)
 {
+	if (self->client->oldplayer)
+		G_FreeEdict(self->client->oldplayer);
+	if (self->client->chasecam)
+		G_FreeEdict(self->client->chasecam);
 	if (deathmatch->value || coop->value)
 	{
 		if (self->movetype != MOVETYPE_NOCLIP)
@@ -1130,6 +1134,7 @@ void PutClientInServer (edict_t *ent)
 	ent->watertype = 0;
 	ent->flags &= ~FL_NO_KNOCKBACK;
 	ent->svflags &= ~SVF_DEADMONSTER;
+	ent->svflags &= ~SVF_NOCLIENT;
 
 	VectorCopy (mins, ent->mins);
 	VectorCopy (maxs, ent->maxs);
