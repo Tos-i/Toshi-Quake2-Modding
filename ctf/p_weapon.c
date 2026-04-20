@@ -156,7 +156,7 @@ qboolean Pickup_Weapon (edict_t *ent, edict_t *other)
 
 	if (other->client->pers.weapon != ent->item && 
 		(other->client->pers.inventory[index] == 1) &&
-		( !deathmatch->value || other->client->pers.weapon == FindItem("blaster") ) )
+		( !deathmatch->value || other->client->pers.weapon == FindItem("Plasma Pistol") ) )
 		other->client->newweapon = ent->item;
 
 	return true;
@@ -234,42 +234,42 @@ NoAmmoWeaponChange
 void NoAmmoWeaponChange (edict_t *ent)
 {
 	if ( ent->client->pers.inventory[ITEM_INDEX(FindItem("slugs"))]
-		&&  ent->client->pers.inventory[ITEM_INDEX(FindItem("railgun"))] )
+		&&  ent->client->pers.inventory[ITEM_INDEX(FindItem("Bolt Sniper"))] )
 	{
-		ent->client->newweapon = FindItem ("railgun");
+		ent->client->newweapon = FindItem ("Bolt Sniper");
 		return;
 	}
 	if ( ent->client->pers.inventory[ITEM_INDEX(FindItem("cells"))]
-		&&  ent->client->pers.inventory[ITEM_INDEX(FindItem("hyperblaster"))] )
+		&&  ent->client->pers.inventory[ITEM_INDEX(FindItem("Heavy Bolter"))] )
 	{
-		ent->client->newweapon = FindItem ("hyperblaster");
+		ent->client->newweapon = FindItem ("Heavy Bolter");
 		return;
 	}
 	if ( ent->client->pers.inventory[ITEM_INDEX(FindItem("bullets"))]
-		&&  ent->client->pers.inventory[ITEM_INDEX(FindItem("chaingun"))] )
+		&&  ent->client->pers.inventory[ITEM_INDEX(FindItem("Auto Bolt Rifle"))] )
 	{
-		ent->client->newweapon = FindItem ("chaingun");
+		ent->client->newweapon = FindItem ("Auto Bolt Rifle");
 		return;
 	}
 	if ( ent->client->pers.inventory[ITEM_INDEX(FindItem("bullets"))]
-		&&  ent->client->pers.inventory[ITEM_INDEX(FindItem("machinegun"))] )
+		&&  ent->client->pers.inventory[ITEM_INDEX(FindItem("Bolt Carbine"))] )
 	{
-		ent->client->newweapon = FindItem ("machinegun");
+		ent->client->newweapon = FindItem ("Bolt Carbine");
 		return;
 	}
 	if ( ent->client->pers.inventory[ITEM_INDEX(FindItem("shells"))] > 1
-		&&  ent->client->pers.inventory[ITEM_INDEX(FindItem("super shotgun"))] )
+		&&  ent->client->pers.inventory[ITEM_INDEX(FindItem("Melta Gun"))] )
 	{
-		ent->client->newweapon = FindItem ("super shotgun");
+		ent->client->newweapon = FindItem ("Melta Gun");
 		return;
 	}
 	if ( ent->client->pers.inventory[ITEM_INDEX(FindItem("shells"))]
-		&&  ent->client->pers.inventory[ITEM_INDEX(FindItem("shotgun"))] )
+		&&  ent->client->pers.inventory[ITEM_INDEX(FindItem("Combat Knife"))] )
 	{
-		ent->client->newweapon = FindItem ("shotgun");
+		ent->client->newweapon = FindItem ("Combat Knife");
 		return;
 	}
-	ent->client->newweapon = FindItem ("blaster");
+	ent->client->newweapon = FindItem ("Plasma Pistol");
 }
 
 /*

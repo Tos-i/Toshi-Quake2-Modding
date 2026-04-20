@@ -501,7 +501,7 @@ qboolean Pickup_Ammo (edict_t *ent, edict_t *other)
 
 	if (weapon && !oldcount)
 	{
-		if (other->client->pers.weapon != ent->item && ( !deathmatch->value || other->client->pers.weapon == FindItem("blaster") ) )
+		if (other->client->pers.weapon != ent->item && ( !deathmatch->value || other->client->pers.weapon == FindItem("Plasma Pistol") ) )
 			other->client->newweapon = ent->item;
 	}
 
@@ -1298,7 +1298,7 @@ always owned, never in the world
 		NULL, 0,
 		"models/weapons/v_blast/tris.md2",
 /* icon */		"w_blaster",
-/* pickup */	"Blaster",
+/* pickup */	"Plasma Pistol",
 		0,
 		0,
 		NULL,
@@ -1321,7 +1321,7 @@ always owned, never in the world
 		"models/weapons/g_shotg/tris.md2", EF_ROTATE,
 		"models/weapons/v_shotg/tris.md2",
 /* icon */		"w_shotgun",
-/* pickup */	"Shotgun",
+/* pickup */	"Combat Knife",
 		0,
 		1,
 		"Shells",
@@ -1344,7 +1344,7 @@ always owned, never in the world
 		"models/weapons/g_shotg2/tris.md2", EF_ROTATE,
 		"models/weapons/v_shotg2/tris.md2",
 /* icon */		"w_sshotgun",
-/* pickup */	"Super Shotgun",
+/* pickup */	"Melta Gun",
 		0,
 		2,
 		"Shells",
@@ -1367,7 +1367,7 @@ always owned, never in the world
 		"models/weapons/g_machn/tris.md2", EF_ROTATE,
 		"models/weapons/v_machn/tris.md2",
 /* icon */		"w_machinegun",
-/* pickup */	"Machinegun",
+/* pickup */	"Bolt Carbine",
 		0,
 		1,
 		"Bullets",
@@ -1390,7 +1390,7 @@ always owned, never in the world
 		"models/weapons/g_chain/tris.md2", EF_ROTATE,
 		"models/weapons/v_chain/tris.md2",
 /* icon */		"w_chaingun",
-/* pickup */	"Chaingun",
+/* pickup */	"Auto Bolt Rifle",
 		0,
 		1,
 		"Bullets",
@@ -1436,7 +1436,7 @@ always owned, never in the world
 		"models/weapons/g_launch/tris.md2", EF_ROTATE,
 		"models/weapons/v_launch/tris.md2",
 /* icon */		"w_glauncher",
-/* pickup */	"Grenade Launcher",
+/* pickup */	"Plasma Incinerator",
 		0,
 		1,
 		"Grenades",
@@ -1459,7 +1459,7 @@ always owned, never in the world
 		"models/weapons/g_rocket/tris.md2", EF_ROTATE,
 		"models/weapons/v_rocket/tris.md2",
 /* icon */		"w_rlauncher",
-/* pickup */	"Rocket Launcher",
+/* pickup */	"Power Fist",
 		0,
 		1,
 		"Rockets",
@@ -1482,7 +1482,7 @@ always owned, never in the world
 		"models/weapons/g_hyperb/tris.md2", EF_ROTATE,
 		"models/weapons/v_hyperb/tris.md2",
 /* icon */		"w_hyperblaster",
-/* pickup */	"HyperBlaster",
+/* pickup */	"Heavy Bolter",
 		0,
 		1,
 		"Cells",
@@ -1505,7 +1505,7 @@ always owned, never in the world
 		"models/weapons/g_rail/tris.md2", EF_ROTATE,
 		"models/weapons/v_rail/tris.md2",
 /* icon */		"w_railgun",
-/* pickup */	"Railgun",
+/* pickup */	"Bolt Sniper",
 		0,
 		1,
 		"Slugs",
