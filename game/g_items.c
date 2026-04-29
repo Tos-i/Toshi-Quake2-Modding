@@ -36,6 +36,8 @@ void Weapon_GrenadeLauncher (edict_t *ent);
 void Weapon_Railgun (edict_t *ent);
 void Weapon_BFG (edict_t *ent);
 
+void Weapon_Fist(edict_t *ent);
+
 gitem_armor_t jacketarmor_info	= { 25,  50, .30, .00, ARMOR_JACKET};
 gitem_armor_t combatarmor_info	= { 50, 100, .60, .30, ARMOR_COMBAT};
 gitem_armor_t bodyarmor_info	= {100, 200, .80, .60, ARMOR_BODY};
@@ -1538,6 +1540,28 @@ always owned, never in the world
 		0,
 /* precache */ "sprites/s_bfg1.sp2 sprites/s_bfg2.sp2 sprites/s_bfg3.sp2 weapons/bfg__f1y.wav weapons/bfg__l1a.wav weapons/bfg__x1b.wav weapons/bfg_hum.wav"
 	},
+
+/* weapon_fist */
+{
+	"weapon_fist",
+	NULL,
+	Use_Weapon,
+	NULL,
+	Weapon_Fist,
+	"misc/w_pkup.wav",
+	NULL,
+	0,
+	"models/weapons/g_rocket/tris.md2",
+	"w_rocket",
+	"Fist",
+	0,
+	0,
+	NULL,
+	IT_WEAPON,
+	NULL,
+	0,
+	"models/objects/rocket/tris.md2 weapons/rockfly.wav"
+},
 
 	//
 	// AMMO ITEMS
