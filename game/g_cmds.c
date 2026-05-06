@@ -939,9 +939,14 @@ void ClientCommand (edict_t *ent)
 		Cmd_Help_f (ent);
 		return;
 	}
-	if (Q_stricmp(cmd, "modhelp") == 0)
+	if (Q_stricmp(cmd, "modhelp1") == 0)
 	{
-		Cmd_ModHelp_f (ent);
+		Cmd_ModHelp1_f (ent);
+		return;
+	}
+	if (Q_stricmp(cmd, "modhelp2") == 0)
+	{
+		Cmd_ModHelp2_f(ent);
 		return;
 	}
 

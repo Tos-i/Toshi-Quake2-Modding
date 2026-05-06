@@ -366,16 +366,20 @@ void Cmd_Help_f (edict_t *ent)
 	HelpComputer (ent);
 }
 
-void Cmd_ModHelp_f(edict_t* ent)
+void Cmd_ModHelp1_f(edict_t* ent)
 {
 	char string[1024];
 	
-
-	Com_sprintf(string, sizeof(string), "Select a class in the console: ssault, Vanguard, Bulwark, Heavy, or Sniper");
-//.centerprintf(ent, "Select a class in the console: ssault, Vanguard, Bulwark, Heavy, or Sniper");
-	//.centerprintf(ent, "Use Alt key to block projectiles and Ctrl key to do a dodge roll");
+	gi.centerprintf(ent, "Pick Air, Van, Bul, Hev, or Sni");
+	//gi.centerprintf(ent, "Use Alt key to block projectiles and Ctrl key to do a dodge roll");
 }
+void Cmd_ModHelp2_f(edict_t* ent)
+{
+	char string[1024];
 
+	gi.centerprintf(ent, "RMB to dodge, CTRL to block");
+	//gi.centerprintf(ent, "Use Alt key to block projectiles and Ctrl key to do a dodge roll");
+}
 //=======================================================================
 
 /*

@@ -2,7 +2,8 @@
   p_hud.c
 D:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\p_hud.c(234,4): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
 D:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\p_hud.c(245,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\p_hud.c(369,29): warning C4100: 'ent': unreferenced parameter
-D:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\p_hud.c(432,1): warning C4701: potentially uninitialized local variable 'cells' used
+D:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\p_hud.c(371,7): warning C4101: 'string': unreferenced local variable
+D:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\p_hud.c(378,7): warning C4101: 'string': unreferenced local variable
+D:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\p_hud.c(436,1): warning C4701: potentially uninitialized local variable 'cells' used
      Creating library .\..\release\gamex86.lib and object .\..\release\gamex86.exp
   game.vcxproj -> D:\Quake Games\Quake II\FinalProject\gamex86.dll
