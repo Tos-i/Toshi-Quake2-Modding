@@ -1,14 +1,8 @@
-﻿C:\Program Files\Microsoft Visual Studio\18\Community\MSBuild\Microsoft\VC\v180\Microsoft.CppBuild.targets(534,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
-  g_items.c
-E:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\g_items.c(43,12): warning C4211: nonstandard extension used: redefined extern to static
-E:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\g_items.c(44,12): warning C4211: nonstandard extension used: redefined extern to static
-E:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\g_items.c(45,12): warning C4211: nonstandard extension used: redefined extern to static
-E:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\g_items.c(705,45): warning C4100: 'item': unreferenced parameter
-E:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\g_items.c(761,77): warning C4100: 'surf': unreferenced parameter
-E:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\g_items.c(761,58): warning C4100: 'plane': unreferenced parameter
-E:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\g_items.c(892,55): warning C4100: 'activator': unreferenced parameter
-E:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\g_items.c(892,39): warning C4100: 'other': unreferenced parameter
-  p_weapon.c
-  Generating Code...
+﻿C:\Program Files\Microsoft Visual Studio\18\Community\MSBuild\Microsoft\VC\v180\Microsoft.CppBuild.targets(537,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+  p_hud.c
+D:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\p_hud.c(234,4): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\p_hud.c(245,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\p_hud.c(369,29): warning C4100: 'ent': unreferenced parameter
+D:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\p_hud.c(432,1): warning C4701: potentially uninitialized local variable 'cells' used
      Creating library .\..\release\gamex86.lib and object .\..\release\gamex86.exp
-  game.vcxproj -> E:\Quake Games\Quake II\FinalProject\gamex86.dll
+  game.vcxproj -> D:\Quake Games\Quake II\FinalProject\gamex86.dll

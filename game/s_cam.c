@@ -76,7 +76,7 @@ void ChasecamTrack(edict_t* ent){
 
     VectorMA(ent->owner->s.origin, ent->chasedist1, forward, spot2);
 
-    spot2[2] = (spot2[2] + 20.000);
+    spot2[2] = (spot2[2] + 10.000);
 
     if (ent->owner->client->v_angle[0] < 0.000) VectorMA(spot2, (ent->owner->client->v_angle[0] * 0.6), up, spot2);
 

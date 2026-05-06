@@ -273,6 +273,7 @@ typedef struct
 	char		helpmessage2[512];
 	int			helpchanged;	// flash F1 icon if non 0, play sound
 								// and increment only if 1, 2, or 3
+	int			modhelpchanged;
 
 	gclient_t	*clients;		// [maxclients]
 
@@ -859,7 +860,9 @@ typedef struct
 	int			score;			// for calculating total unit score in coop games
 
 	int			game_helpchanged;
+	int			game_modhelpchanged;
 	int			helpchanged;
+	int			modhelpchanged;
 
 	qboolean	spectator;			// client is a spectator
 } client_persistant_t;
@@ -892,6 +895,7 @@ struct gclient_s
 	qboolean	showinventory;		// set layout stat
 	qboolean	showhelp;
 	qboolean	showhelpicon;
+	qboolean	showmodhelp;
 
 	int			ammo_index;
 

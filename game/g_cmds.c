@@ -939,6 +939,11 @@ void ClientCommand (edict_t *ent)
 		Cmd_Help_f (ent);
 		return;
 	}
+	if (Q_stricmp(cmd, "modhelp") == 0)
+	{
+		Cmd_ModHelp_f (ent);
+		return;
+	}
 
 	if (level.intermissiontime)
 		return;
