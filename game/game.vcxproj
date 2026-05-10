@@ -472,6 +472,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="g_melee.h" />
     <ClInclude Include="g_local.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="m_actor.h" />
