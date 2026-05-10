@@ -37,6 +37,7 @@ void Weapon_Railgun (edict_t *ent);
 void Weapon_BFG (edict_t *ent);
 
 void Weapon_Fist(edict_t *ent);
+void Weapon_Knife(edict_t* ent);
 
 gitem_armor_t jacketarmor_info	= { 25,  50, .30, .00, ARMOR_JACKET};
 gitem_armor_t combatarmor_info	= { 50, 100, .60, .30, ARMOR_COMBAT};
@@ -1551,9 +1552,31 @@ always owned, never in the world
 	"misc/w_pkup.wav",
 	NULL,
 	0,
-	"models/weapons/v_blast/tris.md2",
-	"w_blaster",
+	"models/weapons/v_rocket/tris.md2",
+	"w_rlauncher",
 	"Fist",
+	0,
+	0,
+	NULL,
+	IT_WEAPON,
+	NULL,
+	0,
+	"weapons/blastf1a.wav misc/lasfly.wav"
+},
+
+// weapon_knife 
+{
+	"weapon_knife",
+	NULL,
+	Use_Weapon,
+	NULL,
+	Weapon_Knife,
+	"misc/w_pkup.wav",
+	NULL,
+	0,
+	"models/weapons/v_shotg/tris.md2",
+	"w_shotgun",
+	"Knife",
 	0,
 	0,
 	NULL,
