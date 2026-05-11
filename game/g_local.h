@@ -855,6 +855,7 @@ typedef struct
 
 	gitem_t		*weapon;
 	gitem_t		*lastweapon;
+	qboolean	fire_mode;
 
 	int			power_cubes;	// used for tracking the cubes in coop games
 	int			score;			// for calculating total unit score in coop games
@@ -935,6 +936,7 @@ struct gclient_s
 	int			breather_sound;
 
 	int			machinegun_shots;	// for weapon raising
+	int			burstfire_count;
 
 	// animation vars
 	int			anim_end;

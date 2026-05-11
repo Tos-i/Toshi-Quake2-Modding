@@ -779,6 +779,26 @@ void Cmd_Wave_f (edict_t *ent)
 	}
 }
 
+//Fire Mode Cmd
+void Cmd_FireMode_f(edict_t* ent)
+{
+	int i;
+	i = ent->client->pers.fire_mode;
+	switch (i)
+		{
+	case 0:
+		ent->client->pers.fire_mode = 1;
+		gi.cprintf(ent, PRINT_HIGH, "Burst Fire Mode\n");
+		break;
+	case 1:
+	default:
+		ent->client->burstfire_count = 0;
+		ent->client->pers.fire_mode = 0;
+		gi.cprintf(ent, PRINT_HIGH, "Fully Automatic Mode\n");
+		break;
+		}
+	 }
+
 /*
 ==================
 Cmd_Say_f
@@ -999,6 +1019,8 @@ void ClientCommand (edict_t *ent)
 		Cmd_Chasecam_Toggle(ent);
 	else if (Q_stricmp(cmd, "playerlist") == 0)
 		Cmd_PlayerList_f(ent);
+	else if (Q_stricmp(cmd, "firemode") == 0)
+		Cmd_FireMode_f(ent);
 	else	// anything that doesn't match a command will be a chat
 		Cmd_Say_f (ent, false, true);
 }
