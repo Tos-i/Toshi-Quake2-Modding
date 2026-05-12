@@ -304,22 +304,26 @@ void HelpComputer (edict_t *ent)
 	char	string[1024];
 	char	*sk;
 
-	if (skill->value == 0)
-		sk = "easy";
-	else if (skill->value == 1)
-		sk = "medium";
-	else if (skill->value == 2)
-		sk = "hard";
+	if (ent->client->pers.assault == 1)
+		sk = "Assault";
+	else if (ent->client->pers.vanguard == 1)
+		sk = "Vanguard";
+	else if (ent->client->pers.heavy == 1)
+		sk = "Heavy";
+	else if (ent->client->pers.sniper == 1)
+		sk = "Sniper";
+	else if (ent->client->pers.bulwark == 1)
+		sk = "Bulwark";
 	else
-		sk = "hard+";
+		sk = "Guardsman";
 
 	// send the layout
 	Com_sprintf (string, sizeof(string),
 		"xv 32 yv 8 picn help "			// background
 		"xv 202 yv 12 string2 \"%s\" "		// skill
 		"xv 0 yv 24 cstring2 \"%s\" "		// level name
-		"xv 0 yv 54 cstring2 \"%s\" "		// help 1
-		"xv 0 yv 110 cstring2 \"%s\" "		// help 2
+		"xv 0 yv 54 cstring2 \"Type class name in console to\nselect: Assault, Vanguard,\nHeavy, Bulwark, or Sniper\" "		// help 1
+		"xv 0 yv 110 cstring2 \"Use RMB to block,\nand CTRL to dodge\" "		// help 2
 		"xv 50 yv 164 string2 \" kills     goals    secrets\" "
 		"xv 50 yv 172 string2 \"%3i/%3i     %i/%i       %i/%i\" ", 
 		sk,
@@ -370,15 +374,13 @@ void Cmd_ModHelp1_f(edict_t* ent)
 {
 	char string[1024];
 	
-	gi.centerprintf(ent, "Pick a class with cmd class 0-4");
-	//gi.centerprintf(ent, "Use Alt key to block projectiles and Ctrl key to do a dodge roll");
+	gi.centerprintf(ent, "Type class name in console to select");
 }
 void Cmd_ModHelp2_f(edict_t* ent)
 {
 	char string[1024];
 
-	gi.centerprintf(ent, "RMB to dodge, CTRL to block");
-	//gi.centerprintf(ent, "Use Alt key to block projectiles and Ctrl key to do a dodge roll");
+	gi.centerprintf(ent, "RMB to block, CTRL to dodge");
 }
 //=======================================================================
 

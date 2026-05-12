@@ -790,7 +790,10 @@ void Cmd_Select_Assault_f(edict_t* ent) {
 		ent->client->pers.inventory[ITEM_INDEX(item)] = 1;
 		item = FindItem("Fist");
 		ent->client->pers.inventory[ITEM_INDEX(item)] = 1;
+		item = FindItem("Bolt Shells");
+		ent->client->pers.inventory[ITEM_INDEX(item)] = 200;
 		ent->client->pers.class_select = 1;
+		ent->client->pers.assault = 1;
 		gi.cprintf(ent, PRINT_HIGH, "Assault Class selected\n");
 	} else gi.cprintf(ent, PRINT_HIGH, "Class already selected\n");
 }
@@ -802,7 +805,10 @@ void Cmd_Select_Vanguard_f(edict_t* ent) {
 		ent->client->pers.inventory[ITEM_INDEX(item)] = 1;
 		item = FindItem("Bolt Carbine");
 		ent->client->pers.inventory[ITEM_INDEX(item)] = 1;
+		item = FindItem("Bolt Shells");
+		ent->client->pers.inventory[ITEM_INDEX(item)] = 200;
 		ent->client->pers.class_select = 1;
+		ent->client->pers.vanguard = 1;
 		gi.cprintf(ent, PRINT_HIGH, "Vanguard Class selected\n");
 	} else gi.cprintf(ent, PRINT_HIGH, "Class already selected\n");
 }
@@ -816,7 +822,14 @@ void Cmd_Select_Heavy_f(edict_t* ent) {
 		ent->client->pers.inventory[ITEM_INDEX(item)] = 1;
 		item = FindItem("Melta Gun");
 		ent->client->pers.inventory[ITEM_INDEX(item)] = 1;
+		item = FindItem("Melta Energy");
+		ent->client->pers.inventory[ITEM_INDEX(item)] = 10;
+		item = FindItem("Plasma Canisters");
+		ent->client->pers.inventory[ITEM_INDEX(item)] = 100;
+		item = FindItem("Bolt Shells");
+		ent->client->pers.inventory[ITEM_INDEX(item)] = 200;
 		ent->client->pers.class_select = 1;
+		ent->client->pers.heavy = 1;
 		gi.cprintf(ent, PRINT_HIGH, "Heavy Class selected\n");
 	} else gi.cprintf(ent, PRINT_HIGH, "Class already selected\n");
 }
@@ -828,21 +841,32 @@ void Cmd_Select_Bulwark_f(edict_t* ent) {
 		ent->client->pers.inventory[ITEM_INDEX(item)] = 1;
 		item = FindItem("Fist");
 		ent->client->pers.inventory[ITEM_INDEX(item)] = 1;
+		item = FindItem("Plasma Canisters");
+		ent->client->pers.inventory[ITEM_INDEX(item)] = 100;
 		ent->client->pers.class_select = 1;
+		ent->client->pers.bulwark = 1;
 		gi.cprintf(ent, PRINT_HIGH, "Bulwark Class selected\n");
 	} else gi.cprintf(ent, PRINT_HIGH, "Class already selected\n");
 }
 void Cmd_Select_Sniper_f(edict_t* ent) {
 	int i = ent->client->pers.class_select;
 	gitem_t* item;
+	char	string[1024];
+	char* sk;
 	if (i == 0) {
 		item = FindItem("Bolt Sniper");
 		ent->client->pers.inventory[ITEM_INDEX(item)] = 1;
 		item = FindItem("Bolt Carbine");
 		ent->client->pers.inventory[ITEM_INDEX(item)] = 1;
+		item = FindItem("Bolt Shells");
+		ent->client->pers.inventory[ITEM_INDEX(item)] = 200;
+		item = FindItem("Bolt Slugs");
+		ent->client->pers.inventory[ITEM_INDEX(item)] = 10;
 		ent->client->pers.class_select = 1;
+		ent->client->pers.sniper = 1;
 		gi.cprintf(ent, PRINT_HIGH, "Sniper Class selected\n");
 	} else gi.cprintf(ent, PRINT_HIGH, "Class already selected\n");
+	
 }
 
 //Fire Mode Cmd
