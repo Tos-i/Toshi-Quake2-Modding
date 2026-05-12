@@ -1,4 +1,24 @@
 ﻿C:\Program Files\Microsoft Visual Studio\18\Community\MSBuild\Microsoft\VC\v180\Microsoft.CppBuild.targets(537,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
-  p_weapon.c
+  g_cmds.c
+D:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\g_cmds.c(34,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\g_cmds.c(57,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\g_cmds.c(58,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\g_cmds.c(722,4): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\g_cmds.c(725,3): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\g_cmds.c(894,3): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\g_cmds.c(895,3): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\g_cmds.c(896,3): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\g_cmds.c(907,3): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\g_cmds.c(914,2): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\g_cmds.c(961,7): warning C4459: declaration of 'st' hides global declaration
+      D:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\g_local.h(457,21):
+      see declaration of 'st'
+  
+D:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\g_cmds.c(983,3): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\g_cmds.c(971,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\g_cmds.c(979,4): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\g_cmds.c(1030,3): warning C4013: 'Cmd_ModHelp1_f' undefined; assuming extern returning int
+D:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\g_cmds.c(1035,3): warning C4013: 'Cmd_ModHelp2_f' undefined; assuming extern returning int
+D:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\g_cmds.c(1085,3): warning C4013: 'Cmd_Chasecam_Toggle' undefined; assuming extern returning int
      Creating library .\..\release\gamex86.lib and object .\..\release\gamex86.exp
   game.vcxproj -> D:\Quake Games\Quake II\FinalProject\gamex86.dll

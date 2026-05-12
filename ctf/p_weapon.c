@@ -233,37 +233,37 @@ NoAmmoWeaponChange
 */
 void NoAmmoWeaponChange (edict_t *ent)
 {
-	if ( ent->client->pers.inventory[ITEM_INDEX(FindItem("slugs"))]
+	if ( ent->client->pers.inventory[ITEM_INDEX(FindItem("Bolt Slugs"))]
 		&&  ent->client->pers.inventory[ITEM_INDEX(FindItem("Bolt Sniper"))] )
 	{
 		ent->client->newweapon = FindItem ("Bolt Sniper");
 		return;
 	}
-	if ( ent->client->pers.inventory[ITEM_INDEX(FindItem("cells"))]
+	if ( ent->client->pers.inventory[ITEM_INDEX(FindItem("Plasma Canisters"))]
 		&&  ent->client->pers.inventory[ITEM_INDEX(FindItem("Heavy Bolter"))] )
 	{
 		ent->client->newweapon = FindItem ("Heavy Bolter");
 		return;
 	}
-	if ( ent->client->pers.inventory[ITEM_INDEX(FindItem("bullets"))]
+	if ( ent->client->pers.inventory[ITEM_INDEX(FindItem("Bolt Shells"))]
 		&&  ent->client->pers.inventory[ITEM_INDEX(FindItem("Auto Bolt Rifle"))] )
 	{
 		ent->client->newweapon = FindItem ("Auto Bolt Rifle");
 		return;
 	}
-	if ( ent->client->pers.inventory[ITEM_INDEX(FindItem("bullets"))]
+	if ( ent->client->pers.inventory[ITEM_INDEX(FindItem("Bolt Shells"))]
 		&&  ent->client->pers.inventory[ITEM_INDEX(FindItem("Bolt Carbine"))] )
 	{
 		ent->client->newweapon = FindItem ("Bolt Carbine");
 		return;
 	}
-	if ( ent->client->pers.inventory[ITEM_INDEX(FindItem("shells"))] > 1
+	if ( ent->client->pers.inventory[ITEM_INDEX(FindItem("Melta Energy"))] > 1
 		&&  ent->client->pers.inventory[ITEM_INDEX(FindItem("Melta Gun"))] )
 	{
 		ent->client->newweapon = FindItem ("Melta Gun");
 		return;
 	}
-	if ( ent->client->pers.inventory[ITEM_INDEX(FindItem("shells"))]
+	if ( ent->client->pers.inventory[ITEM_INDEX(FindItem("Melta Energy"))]
 		&&  ent->client->pers.inventory[ITEM_INDEX(FindItem("Combat Knife"))] )
 	{
 		ent->client->newweapon = FindItem ("Combat Knife");

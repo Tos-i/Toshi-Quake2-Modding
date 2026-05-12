@@ -234,37 +234,37 @@ NoAmmoWeaponChange
 */
 void NoAmmoWeaponChange (edict_t *ent)
 {
-	if ( ent->client->pers.inventory[ITEM_INDEX(FindItem("slugs"))]
+	if ( ent->client->pers.inventory[ITEM_INDEX(FindItem("Bolt Slugs"))]
 		&&  ent->client->pers.inventory[ITEM_INDEX(FindItem("Bolt Sniper"))] )
 	{
 		ent->client->newweapon = FindItem ("Bolt Sniper");
 		return;
 	}
-	if ( ent->client->pers.inventory[ITEM_INDEX(FindItem("cells"))]
+	if ( ent->client->pers.inventory[ITEM_INDEX(FindItem("Plasma Canisters"))]
 		&&  ent->client->pers.inventory[ITEM_INDEX(FindItem("Heavy Bolter"))] )
 	{
 		ent->client->newweapon = FindItem ("Heavy Bolter");
 		return;
 	}
-	if ( ent->client->pers.inventory[ITEM_INDEX(FindItem("bullets"))]
+	if ( ent->client->pers.inventory[ITEM_INDEX(FindItem("Bolt Shells"))]
 		&&  ent->client->pers.inventory[ITEM_INDEX(FindItem("Auto Bolt Rifle"))] )
 	{
 		ent->client->newweapon = FindItem ("Auto Bolt Rifle");
 		return;
 	}
-	if ( ent->client->pers.inventory[ITEM_INDEX(FindItem("bullets"))]
+	if ( ent->client->pers.inventory[ITEM_INDEX(FindItem("Bolt Shells"))]
 		&&  ent->client->pers.inventory[ITEM_INDEX(FindItem("Bolt Carbine"))] )
 	{
 		ent->client->newweapon = FindItem ("Bolt Carbine");
 		return;
 	}
-	if ( ent->client->pers.inventory[ITEM_INDEX(FindItem("shells"))] > 1
+	if ( ent->client->pers.inventory[ITEM_INDEX(FindItem("Melta Energy"))] > 1
 		&&  ent->client->pers.inventory[ITEM_INDEX(FindItem("Melta Gun"))] )
 	{
 		ent->client->newweapon = FindItem ("Melta Gun");
 		return;
 	}
-	if ( ent->client->pers.inventory[ITEM_INDEX(FindItem("shells"))]
+	if ( ent->client->pers.inventory[ITEM_INDEX(FindItem("Melta Energy"))]
 		&&  ent->client->pers.inventory[ITEM_INDEX(FindItem("Combat Knife"))] )
 	{
 		ent->client->newweapon = FindItem ("Combat Knife");
@@ -910,36 +910,60 @@ GRENADE LAUNCHER
 
 void weapon_grenadelauncher_fire (edict_t *ent)
 {
-	vec3_t	offset;
+	vec3_t	offset, start;
 	vec3_t	forward, right;
-	vec3_t	start;
-	int		damage = 120;
-	float	radius;
+	int		damage;
+	float	damage_radius = 10;
 
-	radius = damage+40;
+	if (deathmatch->value)
+		damage = 200;
+	else
+		damage = 100;
+
+	if (ent->client->ps.gunframe == 9)
+	{
+		// send muzzle flash
+		gi.WriteByte(svc_muzzleflash);
+		gi.WriteShort(ent - g_edicts);
+		gi.WriteByte(MZ_BFG | is_silenced);
+		gi.multicast(ent->s.origin, MULTICAST_PVS);
+
+		ent->client->ps.gunframe++;
+
+		PlayerNoise(ent, ent->s.origin, PNOISE_WEAPON);
+		return;
+	}
+
+	// cells can go down during windup (from power armor hits), so
+	// check again and abort firing if we don't have enough now
+	if (ent->client->pers.inventory[ent->client->ammo_index] < 50)
+	{
+		ent->client->ps.gunframe++;
+		return;
+	}
+
 	if (is_quad)
 		damage *= 4;
 
-	VectorSet(offset, 8, 8, ent->viewheight-8);
-	AngleVectors (ent->client->v_angle, forward, right, NULL);
-	P_ProjectSource (ent->client, ent->s.origin, offset, forward, right, start);
+	AngleVectors(ent->client->v_angle, forward, right, NULL);
 
-	VectorScale (forward, -2, ent->client->kick_origin);
-	ent->client->kick_angles[0] = -1;
+	VectorScale(forward, -2, ent->client->kick_origin);
 
-		fire_grenade (ent, start, forward, damage, 600, 2.5, radius);
+	// make a big pitch kick with an inverse fall
+	ent->client->v_dmg_pitch = -40;
+	ent->client->v_dmg_roll = crandom() * 8;
+	ent->client->v_dmg_time = level.time + DAMAGE_TIME;
 
-	gi.WriteByte (svc_muzzleflash);
-	gi.WriteShort (ent-g_edicts);
-	gi.WriteByte (MZ_GRENADE | is_silenced);
-	gi.multicast (ent->s.origin, MULTICAST_PVS);
+	VectorSet(offset, 8, 8, ent->viewheight - 8);
+	P_ProjectSource(ent->client, ent->s.origin, offset, forward, right, start);
+	fire_bfg(ent, start, forward, damage, 100, damage_radius);
 
 	ent->client->ps.gunframe++;
 
 	PlayerNoise(ent, start, PNOISE_WEAPON);
 
-	if (! ( (int)dmflags->value & DF_INFINITE_AMMO ) )
-		ent->client->pers.inventory[ent->client->ammo_index]--;
+	if (!((int)dmflags->value & DF_INFINITE_AMMO))
+		ent->client->pers.inventory[ent->client->ammo_index] -= 10;
 }
 
 void Weapon_GrenadeLauncher (edict_t *ent)

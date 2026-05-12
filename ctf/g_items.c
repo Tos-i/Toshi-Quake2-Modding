@@ -243,7 +243,7 @@ qboolean Pickup_Bandolier (edict_t *ent, edict_t *other)
 	if (other->client->pers.max_slugs < 75)
 		other->client->pers.max_slugs = 75;
 
-	item = FindItem("Bullets");
+	item = FindItem("Bolt Shells");
 	if (item)
 	{
 		index = ITEM_INDEX(item);
@@ -252,7 +252,7 @@ qboolean Pickup_Bandolier (edict_t *ent, edict_t *other)
 			other->client->pers.inventory[index] = other->client->pers.max_bullets;
 	}
 
-	item = FindItem("Shells");
+	item = FindItem("Melta Energy");
 	if (item)
 	{
 		index = ITEM_INDEX(item);
@@ -285,7 +285,7 @@ qboolean Pickup_Pack (edict_t *ent, edict_t *other)
 	if (other->client->pers.max_slugs < 100)
 		other->client->pers.max_slugs = 100;
 
-	item = FindItem("Bullets");
+	item = FindItem("Bolt Shells");
 	if (item)
 	{
 		index = ITEM_INDEX(item);
@@ -294,7 +294,7 @@ qboolean Pickup_Pack (edict_t *ent, edict_t *other)
 			other->client->pers.inventory[index] = other->client->pers.max_bullets;
 	}
 
-	item = FindItem("Shells");
+	item = FindItem("Melta Energy");
 	if (item)
 	{
 		index = ITEM_INDEX(item);
@@ -303,7 +303,7 @@ qboolean Pickup_Pack (edict_t *ent, edict_t *other)
 			other->client->pers.inventory[index] = other->client->pers.max_shells;
 	}
 
-	item = FindItem("Cells");
+	item = FindItem("Plasma Canisters");
 	if (item)
 	{
 		index = ITEM_INDEX(item);
@@ -330,7 +330,7 @@ qboolean Pickup_Pack (edict_t *ent, edict_t *other)
 			other->client->pers.inventory[index] = other->client->pers.max_rockets;
 	}
 
-	item = FindItem("Slugs");
+	item = FindItem("Bolt Slugs");
 	if (item)
 	{
 		index = ITEM_INDEX(item);
@@ -732,7 +732,7 @@ void Use_PowerArmor (edict_t *ent, gitem_t *item)
 	}
 	else
 	{
-		index = ITEM_INDEX(FindItem("cells"));
+		index = ITEM_INDEX(FindItem("Plasma Canisters"));
 		if (!ent->client->pers.inventory[index])
 		{
 			gi.cprintf (ent, PRINT_HIGH, "No cells for power armor.\n");
@@ -1390,7 +1390,7 @@ always owned, never in the world
 /* pickup */	"Combat Knife",
 		0,
 		1,
-		"Shells",
+		"Melta Energy",
 		IT_WEAPON|IT_STAY_COOP,
 		WEAP_SHOTGUN,
 		NULL,
@@ -1413,7 +1413,7 @@ always owned, never in the world
 /* pickup */	"Melta Gun",
 		0,
 		2,
-		"Shells",
+		"Melta Energy",
 		IT_WEAPON|IT_STAY_COOP,
 		WEAP_SUPERSHOTGUN,
 		NULL,
@@ -1436,7 +1436,7 @@ always owned, never in the world
 /* pickup */	"Bolt Carbine",
 		0,
 		1,
-		"Bullets",
+		"Bolt Shells",
 		IT_WEAPON|IT_STAY_COOP,
 		WEAP_MACHINEGUN,
 		NULL,
@@ -1459,7 +1459,7 @@ always owned, never in the world
 /* pickup */	"Auto Bolt Rifle",
 		0,
 		1,
-		"Bullets",
+		"Bolt Shells",
 		IT_WEAPON|IT_STAY_COOP,
 		WEAP_CHAINGUN,
 		NULL,
@@ -1551,7 +1551,7 @@ always owned, never in the world
 /* pickup */	"Heavy Bolter",
 		0,
 		1,
-		"Cells",
+		"Plasma Canisters",
 		IT_WEAPON|IT_STAY_COOP,
 		WEAP_HYPERBLASTER,
 		NULL,
@@ -1574,7 +1574,7 @@ always owned, never in the world
 /* pickup */	"Bolt Sniper",
 		0,
 		1,
-		"Slugs",
+		"Bolt Slugs",
 		IT_WEAPON|IT_STAY_COOP,
 		WEAP_RAILGUN,
 		NULL,
@@ -1597,7 +1597,7 @@ always owned, never in the world
 /* pickup */	"BFG10K",
 		0,
 		50,
-		"Cells",
+		"Plasma Canisters",
 		IT_WEAPON|IT_STAY_COOP,
 		WEAP_BFG,
 		NULL,
@@ -1622,7 +1622,7 @@ always owned, never in the world
 /* pickup */	"Flashlight Laser",
 		0,
 		1,
-		"Cells",
+		"Plasma Canisters",
 		IT_WEAPON,
 		0,
 		NULL,
@@ -1647,7 +1647,7 @@ always owned, never in the world
 		"models/items/ammo/shells/medium/tris.md2", 0,
 		NULL,
 /* icon */		"a_shells",
-/* pickup */	"Shells",
+/* pickup */	"Melta Energy",
 /* width */		3,
 		10,
 		NULL,
@@ -1670,7 +1670,7 @@ always owned, never in the world
 		"models/items/ammo/bullets/medium/tris.md2", 0,
 		NULL,
 /* icon */		"a_bullets",
-/* pickup */	"Bullets",
+/* pickup */	"Bolt Shells",
 /* width */		3,
 		50,
 		NULL,
@@ -1693,7 +1693,7 @@ always owned, never in the world
 		"models/items/ammo/cells/medium/tris.md2", 0,
 		NULL,
 /* icon */		"a_cells",
-/* pickup */	"Cells",
+/* pickup */	"Plasma Canisters",
 /* width */		3,
 		50,
 		NULL,
@@ -1739,7 +1739,7 @@ always owned, never in the world
 		"models/items/ammo/slugs/medium/tris.md2", 0,
 		NULL,
 /* icon */		"a_slugs",
-/* pickup */	"Slugs",
+/* pickup */	"Bolt Slugs",
 /* width */		3,
 		10,
 		NULL,

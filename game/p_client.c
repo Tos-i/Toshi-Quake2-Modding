@@ -607,19 +607,13 @@ but is called after each death and level change in deathmatch
 void InitClientPersistant (gclient_t *client)
 {
 	gitem_t		*item;
-
+	
 	memset (&client->pers, 0, sizeof(client->pers));
-
-	item = FindItem("Fist");
-	client->pers.inventory[ITEM_INDEX(item)] = 1;
 	
 	item = FindItem("Knife");
-	client->pers.inventory[ITEM_INDEX(item)] = 1;
-
-	item = FindItem("Plasma Pistol");
 	client->pers.selected_item = ITEM_INDEX(item);
 	client->pers.inventory[client->pers.selected_item] = 1;
-
+	
 	client->pers.weapon = item;
 
 	client->pers.health			= 100;
@@ -631,7 +625,9 @@ void InitClientPersistant (gclient_t *client)
 	client->pers.max_grenades	= 50;
 	client->pers.max_cells		= 200;
 	client->pers.max_slugs		= 20;
-	client->pers.fire_mode = 1;
+	client->pers.fire_mode		= 1;
+	client->pers.class_select	= 0;
+	
 
 	client->pers.connected = true;
 }
@@ -639,9 +635,45 @@ void InitClientPersistant (gclient_t *client)
 
 void InitClientResp (gclient_t *client)
 {
+	gitem_t* item;
+	
 	memset (&client->resp, 0, sizeof(client->resp));
 	client->resp.enterframe = level.framenum;
 	client->resp.coop_respawn = client->pers;
+
+	/*if (client->pers.class_select == 0) {
+		item = FindItem("Plasma Pistol");
+		client->pers.inventory[ITEM_INDEX(item)] = 1;
+		item = FindItem("Auto Bolt Rifle");
+		client->pers.inventory[ITEM_INDEX(item)] = 1;
+		item = FindItem("Fist");
+		client->pers.inventory[ITEM_INDEX(item)] = 1;
+	}else if (client->pers.class_select == 1) {
+		item = FindItem("Knife");
+		client->pers.inventory[ITEM_INDEX(item)] = 1;
+		item = FindItem("Bolt Carbine");
+		client->pers.inventory[ITEM_INDEX(item)] = 1;
+	}else if (client->pers.class_select == 2) {
+		item = FindItem("Heavy Bolter");
+		client->pers.inventory[ITEM_INDEX(item)] = 1;
+		item = FindItem("Melta Gun");
+		client->pers.inventory[ITEM_INDEX(item)] = 1;
+		item = FindItem("Heavy Plasma Incinerator");
+		client->pers.inventory[ITEM_INDEX(item)] = 1;
+	}else if (client->pers.class_select == 3) {
+		item = FindItem("Plasma Pistol");
+		client->pers.inventory[ITEM_INDEX(item)] = 1;
+		item = FindItem("Fist");
+		client->pers.inventory[ITEM_INDEX(item)] = 1;
+	}else if (client->pers.class_select == 4) {
+		item = FindItem("Bolt Sniper");
+		client->pers.inventory[ITEM_INDEX(item)] = 1;
+		item = FindItem("Knife");
+		client->pers.inventory[ITEM_INDEX(item)] = 1;
+	}else {
+		item = FindItem("Knife");
+		client->pers.inventory[ITEM_INDEX(item)] = 1;
+	}*/
 }
 
 /*

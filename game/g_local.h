@@ -856,6 +856,7 @@ typedef struct
 	gitem_t		*weapon;
 	gitem_t		*lastweapon;
 	qboolean	fire_mode;
+	qboolean	class_select;
 
 	int			power_cubes;	// used for tracking the cubes in coop games
 	int			score;			// for calculating total unit score in coop games

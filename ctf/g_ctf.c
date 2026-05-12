@@ -2289,7 +2289,7 @@ static void CTFSay_Team_Armor(edict_t *who, char *buf)
 	power_armor_type = PowerArmorType (who);
 	if (power_armor_type)
 	{
-		cells = who->client->pers.inventory[ITEM_INDEX(FindItem ("cells"))];
+		cells = who->client->pers.inventory[ITEM_INDEX(FindItem ("Plasma Canisters"))];
 		if (cells)
 			sprintf(buf+strlen(buf), "%s with %i cells ",
 				(power_armor_type == POWER_ARMOR_SCREEN) ?

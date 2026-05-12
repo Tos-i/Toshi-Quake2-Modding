@@ -370,7 +370,7 @@ void Cmd_ModHelp1_f(edict_t* ent)
 {
 	char string[1024];
 	
-	gi.centerprintf(ent, "Pick Air, Van, Bul, Hev, or Sni");
+	gi.centerprintf(ent, "Pick a class with cmd class 0-4");
 	//gi.centerprintf(ent, "Use Alt key to block projectiles and Ctrl key to do a dodge roll");
 }
 void Cmd_ModHelp2_f(edict_t* ent)
@@ -420,7 +420,7 @@ void G_SetStats (edict_t *ent)
 	power_armor_type = PowerArmorType (ent);
 	if (power_armor_type)
 	{
-		cells = ent->client->pers.inventory[ITEM_INDEX(FindItem ("cells"))];
+		cells = ent->client->pers.inventory[ITEM_INDEX(FindItem ("Plasma Canisters"))];
 		if (cells == 0)
 		{	// ran out of cells for power armor
 			ent->flags &= ~FL_POWER_ARMOR;
