@@ -22,19 +22,5 @@ D:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\g_cmds.c(1098,4): warning 
 D:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\g_cmds.c(1149,3): warning C4013: 'Cmd_ModHelp1_f' undefined; assuming extern returning int
 D:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\g_cmds.c(1154,3): warning C4013: 'Cmd_ModHelp2_f' undefined; assuming extern returning int
 D:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\g_cmds.c(1204,3): warning C4013: 'Cmd_Chasecam_Toggle' undefined; assuming extern returning int
-  g_items.c
-D:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\g_items.c(46,12): warning C4211: nonstandard extension used: redefined extern to static
-D:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\g_items.c(47,12): warning C4211: nonstandard extension used: redefined extern to static
-D:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\g_items.c(48,12): warning C4211: nonstandard extension used: redefined extern to static
-D:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\g_items.c(708,45): warning C4100: 'item': unreferenced parameter
-D:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\g_items.c(764,77): warning C4100: 'surf': unreferenced parameter
-D:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\g_items.c(764,58): warning C4100: 'plane': unreferenced parameter
-D:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\g_items.c(895,55): warning C4100: 'activator': unreferenced parameter
-D:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\g_items.c(895,39): warning C4100: 'other': unreferenced parameter
-D:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\g_items.c(1562,2): warning C4047: 'initializing': 'int' differs in levels of indirection from 'void *'
-D:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\g_items.c(1564,2): warning C4047: 'initializing': 'int' differs in levels of indirection from 'char [37]'
-D:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\g_items.c(1584,2): warning C4047: 'initializing': 'int' differs in levels of indirection from 'void *'
-D:\Quake Games\Quake 2 Code\Toshi-Quake2-Modding\game\g_items.c(1586,2): warning C4047: 'initializing': 'int' differs in levels of indirection from 'char [37]'
-  Generating Code...
      Creating library .\..\release\gamex86.lib and object .\..\release\gamex86.exp
   game.vcxproj -> D:\Quake Games\Quake II\FinalProject\gamex86.dll

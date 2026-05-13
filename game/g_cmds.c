@@ -888,7 +888,7 @@ void Cmd_Select_Sniper_f(edict_t* ent) {
 void Cmd_Upgrade_f(edict_t* ent) {
 	gitem_t* item;
 	if (ent->client->pers.class_select == 1) {
-		if (level.killed_monsters >= 1) {
+		if (level.killed_monsters >= 3) {
 			if (ent->client->pers.assault == 1 || ent->client->pers.vanguard == 1) {
 				item = FindItem("Grenades");
 				ent->client->pers.inventory[ITEM_INDEX(item)] = 3;
@@ -902,7 +902,7 @@ void Cmd_Upgrade_f(edict_t* ent) {
 				item = FindItem("Invulnerability");
 				ent->client->pers.inventory[ITEM_INDEX(item)] = 1;
 			}
-			if (level.killed_monsters >= 1) {
+			if (level.killed_monsters >= 6) {
 				if (ent->client->pers.assault == 1) {
 					item = FindItem("Auto Bolt Rifle");
 					ent->client->pers.inventory[ITEM_INDEX(item)] = 1;
@@ -932,7 +932,7 @@ void Cmd_Upgrade_f(edict_t* ent) {
 					ent->client->pers.inventory[ITEM_INDEX(item)] = 1;
 				}
 			}
-			if (level.killed_monsters >= 1) {
+			if (level.killed_monsters >= 9) {
 				if (ent->client->pers.assault == 1) {
 					ent->client->pers.assaultUP3 = 1;
 				}
