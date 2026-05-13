@@ -7,6 +7,7 @@ This mod is an adaptation of the game "Warhammer 40,000: Space Marine 2" into Qu
   - bulwark, the frontline defender
   - sniper, the fire support from the shadows
 - minor upgrades that can be gained for each class
+  - gained by killing enemies and using the 'upgrade' command when hitting certain thresholds
 - updated weapons to reflect those that appear in the original game
 - 5 new defensive maneuvers to avoid damage in various ways
 - a third-person camera view!
