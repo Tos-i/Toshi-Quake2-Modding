@@ -616,8 +616,8 @@ void fist_attack(edict_t* ent, vec3_t g_offset, int damage)
 void Weapon_Fist_Fire(edict_t* ent)
 {
 	int damage;
-	if (deathmatch->value)
-		damage = SWORD_DEATHMATCH_DAMAGE;
+	if (ent->client->pers.bulwarkUP3 == 1)
+		damage = SWORD_NORMAL_DAMAGE*4;
 	else
 		damage = SWORD_NORMAL_DAMAGE;
 	fist_attack(ent, vec3_origin, damage);
@@ -717,10 +717,10 @@ void knife_attack(edict_t* ent, vec3_t g_offset, int damage)
 void Weapon_Knife_Fire(edict_t* ent)
 {
 	int damage;
-	if (deathmatch->value)
-		damage = SWORD_DEATHMATCH_DAMAGE/4;
+	if (ent->client->pers.bulwarkUP3 == 1)
+		damage = SWORD_NORMAL_DAMAGE*4;
 	else
-		damage = SWORD_NORMAL_DAMAGE/4;
+		damage = SWORD_NORMAL_DAMAGE/2;
 	fist_attack(ent, vec3_origin, damage);
 	ent->client->ps.gunframe++;
 }
@@ -918,7 +918,7 @@ void weapon_grenadelauncher_fire (edict_t *ent)
 	if (deathmatch->value)
 		damage = 200;
 	else
-		damage = 100;
+		damage = 50;
 
 	if (ent->client->ps.gunframe == 9)
 	{
@@ -1384,7 +1384,7 @@ void Chaingun_Fire (edict_t *ent)
 		return;
 	}
 
-	if (is_quad)
+	if (ent->client->pers.heavyUP3 == 1)
 	{
 		damage *= 4;
 		kick *= 4;
@@ -1510,7 +1510,7 @@ void weapon_supershotgun_fire (edict_t *ent)
 	VectorSet(offset, 0, 8,  ent->viewheight-8);
 	P_ProjectSource (ent->client, ent->s.origin, offset, forward, right, start);
 
-	if (is_quad)
+	if (ent->client->pers.heavyUP3 == 1)
 	{
 		damage *= 4;
 		kick *= 4;
@@ -1564,9 +1564,9 @@ void weapon_railgun_fire (edict_t *ent)
 	int			damage;
 	int			kick;
 
-	if (deathmatch->value)
+	if (ent->client->pers.heavyUP3 == 1)
 	{	// normal damage is too extreme in dm
-		damage = 100;
+		damage = 400;
 		kick = 200;
 	}
 	else
@@ -1655,7 +1655,7 @@ void weapon_bfg_fire (edict_t *ent)
 		return;
 	}
 
-	if (is_quad)
+	if (ent->client->pers.heavyUP3 == 1)
 		damage *= 4;
 
 	AngleVectors (ent->client->v_angle, forward, right, NULL);

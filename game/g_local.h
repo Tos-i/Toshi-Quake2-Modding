@@ -863,6 +863,12 @@ typedef struct
 	qboolean	bulwark;
 	qboolean	sniper;
 
+	qboolean	sniperUP3;
+	qboolean	bulwarkUP3;
+	qboolean	assaultUP3;
+	qboolean	vanguardUP3;
+	qboolean	heavyUP3;
+
 	int			power_cubes;	// used for tracking the cubes in coop games
 	int			score;			// for calculating total unit score in coop games
 
@@ -968,6 +974,10 @@ struct gclient_s
 	int			flood_whenhead;		// head pointer for when said
 
 	float		respawn_time;		// can respawn when time > this
+
+	// MUCE: added for jetpack thrusting.
+	qboolean        thrusting;              // 1 on 0 off
+	float           next_thrust_sound;
 
 	//Chasecam vars
 	int chasetoggle;

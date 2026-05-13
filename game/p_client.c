@@ -634,6 +634,12 @@ void InitClientPersistant (gclient_t *client)
 	client->pers.heavy			= 0;
 	client->pers.sniper			= 0;
 
+	client->pers.bulwarkUP3		= 0;
+	client->pers.assaultUP3		= 0;
+	client->pers.vanguardUP3	= 0;
+	client->pers.heavyUP3		= 0;
+	client->pers.sniperUP3		= 0;
+
 	client->pers.connected = true;
 }
 
@@ -1598,6 +1604,10 @@ void ClientThink (edict_t *ent, usercmd_t *ucmd)
 		return;
 	}
 
+	// MUCE:  Think for thrusting
+	if (ent->client->thrusting)
+		ApplyThrust(ent);
+
 	pm_passent = ent;
 
 	if (ent->client->chase_target) {
@@ -1684,6 +1694,8 @@ void ClientThink (edict_t *ent, usercmd_t *ucmd)
 			VectorCopy (pm.viewangles, client->v_angle);
 			VectorCopy (pm.viewangles, client->ps.viewangles);
 		}
+
+
 
 		gi.linkentity (ent);
 

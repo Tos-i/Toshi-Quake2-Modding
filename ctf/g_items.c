@@ -1310,7 +1310,7 @@ gitem_t	itemlist[] =
 		"models/items/armor/shield/tris.md2", EF_ROTATE,
 		NULL,
 /* icon */		"i_powershield",
-/* pickup */	"Power Shield",
+/* pickup */	"Power Armor",
 /* width */		0,
 		60,
 		NULL,
@@ -2442,5 +2442,5 @@ void SetItemNames (void)
 	combat_armor_index = ITEM_INDEX(FindItem("Combat Armor"));
 	body_armor_index   = ITEM_INDEX(FindItem("Body Armor"));
 	power_screen_index = ITEM_INDEX(FindItem("Power Screen"));
-	power_shield_index = ITEM_INDEX(FindItem("Power Shield"));
+	power_shield_index = ITEM_INDEX(FindItem("Power Armor"));
 }

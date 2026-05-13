@@ -229,9 +229,9 @@ void Cmd_Give_f (edict_t *ent)
 			return;
 	}
 
-	if (give_all || Q_stricmp(name, "Power Shield") == 0)
+	if (give_all || Q_stricmp(name, "Power Armor") == 0)
 	{
-		it = FindItem("Power Shield");
+		it = FindItem("Power Armor");
 		it_ent = G_Spawn();
 		it_ent->classname = it->classname;
 		SpawnItem (it_ent, it);
@@ -779,19 +779,35 @@ void Cmd_Wave_f (edict_t *ent)
 	}
 }
 
-//Class Select
+// Fire Mode Cmd
+void Cmd_FireMode_f(edict_t* ent)
+{
+	int i;
+	i = ent->client->pers.fire_mode;
+	switch (i)
+	{
+	case 0:
+		ent->client->pers.fire_mode = 1;
+		gi.cprintf(ent, PRINT_HIGH, "Burst Fire Mode\n");
+		break;
+	case 1:
+	default:
+		ent->client->burstfire_count = 0;
+		ent->client->pers.fire_mode = 0;
+		gi.cprintf(ent, PRINT_HIGH, "Fully Automatic Mode\n");
+		break;
+	}
+}
+
+// Class Select Cmds
 void Cmd_Select_Assault_f(edict_t* ent) {
 	int i = ent->client->pers.class_select;
 	gitem_t *item;
 	if (i == 0) {
 		item = FindItem("Plasma Pistol");
 		ent->client->pers.inventory[ITEM_INDEX(item)] = 1;
-		item = FindItem("Auto Bolt Rifle");
-		ent->client->pers.inventory[ITEM_INDEX(item)] = 1;
 		item = FindItem("Fist");
 		ent->client->pers.inventory[ITEM_INDEX(item)] = 1;
-		item = FindItem("Bolt Shells");
-		ent->client->pers.inventory[ITEM_INDEX(item)] = 200;
 		ent->client->pers.class_select = 1;
 		ent->client->pers.assault = 1;
 		gi.cprintf(ent, PRINT_HIGH, "Assault Class selected\n");
@@ -866,27 +882,106 @@ void Cmd_Select_Sniper_f(edict_t* ent) {
 		ent->client->pers.sniper = 1;
 		gi.cprintf(ent, PRINT_HIGH, "Sniper Class selected\n");
 	} else gi.cprintf(ent, PRINT_HIGH, "Class already selected\n");
-	
 }
 
-//Fire Mode Cmd
-void Cmd_FireMode_f(edict_t* ent)
+// Upgrade Cmd
+void Cmd_Upgrade_f(edict_t* ent) {
+	gitem_t* item;
+	if (ent->client->pers.class_select == 1) {
+		if (level.killed_monsters >= 1) {
+			if (ent->client->pers.assault == 1 || ent->client->pers.vanguard == 1) {
+				item = FindItem("Grenades");
+				ent->client->pers.inventory[ITEM_INDEX(item)] = 3;
+			} else if (ent->client->pers.heavy == 1) {
+				item = FindItem("Quad Damage");
+				ent->client->pers.inventory[ITEM_INDEX(item)] = 1;
+			} else if (ent->client->pers.sniper == 1) {
+				item = FindItem("Silencer");
+				ent->client->pers.inventory[ITEM_INDEX(item)] = 1;
+			} else {
+				item = FindItem("Invulnerability");
+				ent->client->pers.inventory[ITEM_INDEX(item)] = 1;
+			}
+			if (level.killed_monsters >= 1) {
+				if (ent->client->pers.assault == 1) {
+					item = FindItem("Auto Bolt Rifle");
+					ent->client->pers.inventory[ITEM_INDEX(item)] = 1;
+					item = FindItem("Bolt Shells");
+					ent->client->pers.inventory[ITEM_INDEX(item)] = 200;
+				}
+				else if (ent->client->pers.heavy == 1) {
+					ent->client->pers.max_bullets = 1000;
+					item = FindItem("Bolt Shells");
+					ent->client->pers.inventory[ITEM_INDEX(item)] = 1000;
+				}
+				else if (ent->client->pers.sniper == 1) {
+					item = FindItem("Bolt Slugs");
+					ent->client->pers.inventory[ITEM_INDEX(item)] = 30;
+				}
+				else if (ent->client->pers.vanguard == 1) {
+					item = FindItem("Melta Gun");
+					ent->client->pers.inventory[ITEM_INDEX(item)] = 1;
+					item = FindItem("Melta Energy");
+					ent->client->pers.inventory[ITEM_INDEX(item)] = 10;
+				}
+				else {
+					ent->client->pers.max_cells = 1000;
+					item = FindItem("Plasma Canisters");
+					ent->client->pers.inventory[ITEM_INDEX(item)] = 1000;
+					item = FindItem("Power Armor");
+					ent->client->pers.inventory[ITEM_INDEX(item)] = 1;
+				}
+			}
+			if (level.killed_monsters >= 1) {
+				if (ent->client->pers.assault == 1) {
+					ent->client->pers.assaultUP3 = 1;
+				}
+				else if (ent->client->pers.heavy == 1) {
+					ent->client->pers.heavyUP3 = 1;
+				}
+				else if (ent->client->pers.sniper == 1) {
+					item = FindItem("Heavy Plasma Incinerator");
+					ent->client->pers.inventory[ITEM_INDEX(item)] = 1;
+					item = FindItem("Plasma Canisters");
+					ent->client->pers.inventory[ITEM_INDEX(item)] = 60;
+				}
+				else if (ent->client->pers.vanguard == 1) {
+					Cmd_FireMode_f(ent);
+					item = FindItem("Bolt Shells");
+					ent->client->pers.inventory[ITEM_INDEX(item)] = 400;
+				}
+				else {
+					ent->client->pers.bulwarkUP3 = 1;
+				}
+			}
+		gi.cprintf(ent, PRINT_HIGH, "Upgrade(s) Successful!\n");
+		} else gi.cprintf(ent, PRINT_HIGH, "Not enough Kills to Upgrade\n");
+	} else gi.cprintf(ent, PRINT_HIGH, "No Class selected, idiot\n");
+}
+
+/*
+=================
+Cmd_Thrust_f
+
+MUCE:
+To set jetpack on or off
+=================
+*/
+void Cmd_Thrust_f(edict_t* ent)
 {
-	int i;
-	i = ent->client->pers.fire_mode;
-	switch (i)
-		{
-	case 0:
-		ent->client->pers.fire_mode = 1;
-		gi.cprintf(ent, PRINT_HIGH, "Burst Fire Mode\n");
-		break;
-	case 1:
-	default:
-		ent->client->burstfire_count = 0;
-		ent->client->pers.fire_mode = 0;
-		gi.cprintf(ent, PRINT_HIGH, "Fully Automatic Mode\n");
-		break;
-		}
+	char* string;
+
+	string = gi.args();
+
+	if (Q_stricmp(string, "on") == 0)
+	{
+		ent->client->thrusting = 1;
+		ent->client->next_thrust_sound = 0;
+	}
+	else
+	{
+		ent->client->thrusting = 0;
+	}
 }
 
 /*
@@ -1121,6 +1216,13 @@ void ClientCommand (edict_t *ent)
 		Cmd_Select_Bulwark_f(ent);
 	else if (Q_stricmp(cmd, "sniper") == 0)
 		Cmd_Select_Sniper_f(ent);
+	else if (Q_stricmp(cmd, "upgrade") == 0)
+		Cmd_Upgrade_f(ent);
+	else if (Q_stricmp(cmd, "thrust") == 0) {
+		if (ent->client->pers.assaultUP3 == 1) {
+			Cmd_Thrust_f(ent);
+		} else gi.cprintf(ent, PRINT_HIGH, "Upgrade not activated\n");
+	}
 	else	// anything that doesn't match a command will be a chat
 		Cmd_Say_f (ent, false, true);
 }

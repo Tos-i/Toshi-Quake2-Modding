@@ -2293,7 +2293,7 @@ static void CTFSay_Team_Armor(edict_t *who, char *buf)
 		if (cells)
 			sprintf(buf+strlen(buf), "%s with %i cells ",
 				(power_armor_type == POWER_ARMOR_SCREEN) ?
-				"Power Screen" : "Power Shield", cells);
+				"Power Screen" : "Power Armor", cells);
 	}
 
 	index = ArmorIndex (who);
